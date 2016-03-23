@@ -1,0 +1,41 @@
+<div ng-hide="vm.isAuthenticated()">
+    <h2>Please log in.<h2>
+</div>
+
+<div layout="column" flex="grow" ng-show="vm.isAuthenticated()">
+   <div layout="column" flex-offset="5">
+        <div>
+            <h3>User Information</h3>
+        </div>
+        <div layout="row">
+            <form flex="60" layout-fill>
+                <fieldset layout-fill>
+                    <div class="form-group" layout-fill>
+                        <div class="input-group input-group-lg" layout-fill>
+                            <label for="title" class="control-label">name</label>  
+                            <input type="text" name="title" class="form-control" ng-model="vm.user.name" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group" layout-fill>
+                        <div class="input-group input-group-lg" layout-fill>
+                            <label for="email" class="control-label">email</label>  
+                            <input type="email" name="email" class="form-control" ng-model="vm.user.email" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group" layout-fill>
+                        <div class="input-group input-group-lg" layout-fill>
+                            <label for="job" class="control-label">job</label>  
+                            <input type="text" name="job" class="form-control" ng-model="vm.user.job" readonly>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div flex="40" layout layout-align="center center">
+                <div flex="100" layout-align="center center" ng-show="vm.loading">
+                    <i layout-align="center center" class="fa fa-cog fa-spin fa-3x"></i>
+                </div>
+                <img layout-align="center center" ng-src="{{vm.user.photo}}" />
+            </div>
+        </div>
+    </div>
+</div>

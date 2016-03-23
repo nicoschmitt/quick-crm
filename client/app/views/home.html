@@ -1,0 +1,18 @@
+
+<div ng-hide="vm.isAuthenticated()">
+    <h2>Please log in.<h2>
+</div>
+
+<div layout="column" flex="grow" ng-show="vm.isAuthenticated()">
+    <div layout="column">
+        <div flex="100" ng-show="vm.loading">
+            <i class="fa fa-cog fa-spin fa-5x"></i>
+            <p></p>
+        </div>
+        <div class="alert alert-dismissible alert-danger" ng-show="vm.message.length">
+            <strong>Oh snap!</strong>
+            <p>{{vm.message}}</p>
+        </div>
+    </div>
+
+</div>
