@@ -27,7 +27,7 @@
             }).otherwise({ redirectTo: "/Home" });
             
             var spurl = "https://" + o365tenant + "-my.sharepoint.com/";
-            var crmurl = "https://" + crmtenant + ".crm.dynamics.com";;
+            var crmurl = "https://" + crmtenant + ".crm.dynamics.com";
             
             adalProvider.init({
                 tenant: 'microsoft.onmicrosoft.com',
