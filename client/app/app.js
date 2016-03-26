@@ -28,15 +28,17 @@
             
             var spurl = "https://" + o365tenant + "-my.sharepoint.com/";
             var crmurl = "https://" + crmtenant + ".crm.dynamics.com";
+            var endpoints = {};
+            endpoints[crmurl] = crmurl;
+            endpoints[spurl] = spurl;
+            endpoints["https://graph.microsoft.com/"] = "https://graph.microsoft.com/";
+
+            console.log(Object.keys(endpoints));
             
             adalProvider.init({
-                tenant: 'microsoft.onmicrosoft.com',
+                tenant: o365tenant + '.onmicrosoft.com',
                 clientId: adalAppId,
-                endpoints: {
-                    crmurl: crmurl,
-                    spurl: spurl,
-                    "https://graph.microsoft.com/": "https://graph.microsoft.com/"
-                }
+                endpoints: endpoints
             }, $httpProvider );
 
     }]);

@@ -6,6 +6,8 @@
         function ($rootScope, $location, adal, $http) {
             var vm = this;
             
+            vm.isAuthenticated = function() { return adal.userInfo.isAuthenticated }
+            
             vm.login = function() {
                 adal.login();
             };
@@ -23,7 +25,6 @@
                 return viewLocation === $location.path();
             };
             
-            vm.isAuthenticated = function() { return adal.userInfo.isAuthenticated }
         }
     ]);
   
@@ -32,7 +33,7 @@
             restrict: 'E',
             templateUrl: "/app/views/top-nav.html",
             controller: "topNavCtrl",
-            controllerAs: "nav"
+            controllerAs: "vm"
         };
     });
   
